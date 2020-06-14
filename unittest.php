@@ -165,6 +165,8 @@ mail_test();
 
 function ngo_registration(){
     include('ngo_registration.php');
+    $passed=0;
+    $failed=0;
     if(ngo_registration($name, $chairman, $contact_no, $address, $email, $pass, $establishment_year)){
                 wh_log("#############################################");
                 wh_log("The testing of email transfer is failed");
@@ -184,6 +186,8 @@ function ngo_registration(){
         $failed++
 
     }
+        wh_log("Total test case passed ".$passed);
+        wh_log("Total test case failed ".$failed);
 }
 ngo_registration();
 ?> 
